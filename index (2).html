@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>نايل هورايزون | موقع عقاري مميز</title>
+  <meta name="description" content="نايل هورايزون - خبرة عقارية مميزة في بيع وتأجير واستثمار العقارات الفاخرة بمواقع استثنائية." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#08111f;
+      --bg-soft:#0d1b2f;
+      --card:rgba(255,255,255,.08);
+      --card-2:#12233c;
+      --stroke:rgba(255,255,255,.12);
+      --text:#f7fbff;
+      --muted:#a9b8cf;
+      --primary:#39c6d6;
+      --primary-2:#1a8fbf;
+      --gold:#f2c46d;
+      --success:#51d1a1;
+      --danger:#ff7f8e;
+      --shadow:0 20px 60px rgba(0,0,0,.35);
+      --radius:24px;
+      --radius-sm:16px;
+      --container:min(1180px,calc(100% - 32px));
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Cairo",system-ui,sans-serif;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(57,198,214,.14), transparent 28%),
+        radial-gradient(circle at 85% 15%, rgba(242,196,109,.14), transparent 24%),
+        radial-gradient(circle at 50% 75%, rgba(26,143,191,.16), transparent 24%),
+        linear-gradient(180deg,#07101d 0%,#091524 34%,#0a1320 100%);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%}
+    .container{width:var(--container);margin-inline:auto}
+    .section{padding:88px 0}
+    .section-title{
+      font-size:clamp(28px,4vw,46px);
+      line-height:1.15;
+      margin:0 0 14px;
+      font-weight:900;
+      letter-spacing:-.02em;
+    }
+    .section-subtitle{
+      color:var(--muted);
+      margin:0 auto 24px;
+      max-width:700px;
+      line-height:1.9;
+      font-size:1rem;
+    }
+    .badge{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:10px 16px;border-radius:999px;
+      background:rgba(57,198,214,.1);
+      border:1px solid rgba(57,198,214,.2);
+      color:#b8f6fb;font-weight:700;font-size:.92rem;
+      backdrop-filter:blur(12px);
+    }
+    .badge-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 18px var(--gold)}
+    .btn{
+      border:none;cursor:pointer;font-family:inherit;
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:14px 22px;border-radius:16px;font-weight:800;
+      transition:.28s ease;white-space:nowrap;
+    }
+    .btn-primary{
+      background:linear-gradient(135deg,var(--primary),var(--primary-2));
+      color:#05121c;box-shadow:0 14px 32px rgba(57,198,214,.28);
+    }
+    .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.05)}
+    .btn-secondary{
+      background:rgba(255,255,255,.06);color:var(--text);border:1px solid var(--stroke)
+    }
+    .btn-secondary:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
+    .header{
+      position:sticky;top:0;z-index:90;
+      backdrop-filter:blur(18px);
+      background:rgba(8,17,31,.55);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      min-height:78px;gap:16px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;font-weight:900;font-size:1.18rem
+    }
+    .brand-mark{
+      width:44px;height:44px;border-radius:14px;
+      background:
+        linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.03)),
+        linear-gradient(135deg,var(--primary),var(--primary-2));
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 12px 28px rgba(57,198,214,.25);
+      position:relative;overflow:hidden;
+    }
+    .brand-mark:before,.brand-mark:after{
+      content:"";position:absolute;bottom:8px;background:rgba(255,255,255,.92);border-radius:2px 2px 0 0
+    }
+    .brand-mark:before{right:9px;width:7px;height:15px}
+    .brand-mark:after{right:20px;width:10px;height:23px;box-shadow:13px -5px 0 0 rgba(255,255,255,.92)}
+    .nav-links{
+      display:flex;align-items:center;gap:26px;color:#d9e4f5
+    }
+    .nav-links a{position:relative;font-weight:700}
+    .nav-links a:after{
+      content:"";position:absolute;right:0;bottom:-8px;height:2px;width:0;
+      background:linear-gradient(90deg,var(--gold),var(--primary));transition:.25s
+    }
+    .nav-links a:hover:after{width:100%}
+    .nav-actions{display:flex;align-items:center;gap:12px}
+    .menu-btn{
+      width:48px;height:48px;border-radius:14px;border:1px solid var(--stroke);
+      background:rgba(255,255,255,.06);display:none;align-items:center;justify-content:center;color:#fff
+    }
+    .hero{
+      position:relative;padding:72px 0 42px;overflow:hidden;
+    }
+    .hero-grid{
+      display:grid;grid-template-columns:1.15fr .95fr;gap:34px;align-items:center;
+    }
+    .hero h1{
+      margin:20px 0 18px;
+      font-size:clamp(38px,5vw,68px);
+      line-height:1.08;font-weight:900;letter-spacing:-.03em;
+    }
+    .hero h1 .gradient{
+      background:linear-gradient(135deg,#ffffff 0%,#8deaf3 45%,#f5d28a 100%);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .hero p{
+      color:var(--muted);font-size:1.08rem;line-height:2;max-width:650px;margin:0 0 28px;
+    }
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+    .hero-points{
+      display:flex;gap:22px;flex-wrap:wrap;margin-top:28px;color:#dfeaf9
+    }
+    .hero-points span{
+      display:inline-flex;gap:8px;align-items:center;font-weight:700
+    }
+    .hero-points i{
+      width:22px;height:22px;border-radius:50%;
+      background:rgba(81,209,161,.13);display:inline-flex;align-items:center;justify-content:center;
+      color:var(--success);font-style:normal;font-size:.8rem;border:1px solid rgba(81,209,161,.25)
+    }
+    .hero-visual{
+      position:relative;min-height:560px;
+    }
+    .showcase{
+      position:absolute;inset:0;border-radius:32px;
+      background:
+        linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02)),
+        linear-gradient(160deg,#102748 0%,#0b1730 52%,#091421 100%);
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .showcase:before{
+      content:"";position:absolute;inset:auto 0 0 0;height:58%;
+      background:
+        linear-gradient(180deg,transparent 0%,rgba(9,20,33,.14) 14%,rgba(9,20,33,.95) 100%),
+        linear-gradient(90deg,transparent 0 10%,rgba(255,255,255,.08) 10% 11%,transparent 11% 17%,rgba(255,255,255,.07) 17% 18%,transparent 18% 24%,rgba(255,255,255,.08) 24% 25%,transparent 25% 31%,rgba(255,255,255,.09) 31% 32%,transparent 32% 100%);
+      opacity:.95;
+    }
+    .skyline{
+      position:absolute;inset:auto 26px 34px 26px;height:240px;
+      background:
+        linear-gradient(180deg,rgba(57,198,214,.22),transparent 35%),
+        linear-gradient(90deg,
+          #15355b 0 10%, transparent 10% 12%,
+          #1c4674 12% 18%, transparent 18% 20%,
+          #184064 20% 30%, transparent 30% 32%,
+          #23507d 32% 42%, transparent 42% 44%,
+          #15385d 44% 56%, transparent 56% 58%,
+          #1e476e 58% 68%, transparent 68% 70%,
+          #1a4268 70% 80%, transparent 80% 82%,
+          #224d79 82% 93%, transparent 93% 100%);
+      border-radius:20px 20px 0 0;
+      filter:drop-shadow(0 -10px 30px rgba(57,198,214,.18));
+    }
+    .water{
+      position:absolute;left:0;right:0;bottom:0;height:120px;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,.13), transparent 18%),
+        radial-gradient(circle at 50% 40%, rgba(255,255,255,.08), transparent 16%),
+        radial-gradient(circle at 80% 30%, rgba(255,255,255,.12), transparent 18%),
+        linear-gradient(180deg,rgba(57,198,214,.22),rgba(5,17,28,.96));
+      backdrop-filter:blur(10px);
+    }
+    .float-card{
+      position:absolute;background:rgba(255,255,255,.08);backdrop-filter:blur(16px);
+      border:1px solid rgba(255,255,255,.12);border-radius:22px;box-shadow:var(--shadow)
+    }
+    .float-top{top:20px;left:20px;padding:16px 18px;min-width:220px}
+    .float-bottom{bottom:20px;right:20px;padding:18px;min-width:240px}
+    .float-card small{display:block;color:var(--muted);margin-bottom:6px}
+    .float-card strong{font-size:1.2rem}
+    .mini-stars{color:var(--gold);letter-spacing:2px}
+    .search-panel{
+      margin-top:36px;background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.09);backdrop-filter:blur(18px);
+      border-radius:28px;padding:20px;box-shadow:var(--shadow)
+    }
+    .search-tabs{
+      display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px
+    }
+    .tab{
+      padding:10px 16px;border-radius:999px;border:1px solid var(--stroke);
+      background:rgba(255,255,255,.05);color:#d9e5f5;font-weight:800;cursor:pointer
+    }
+    .tab.active{
+      background:linear-gradient(135deg,rgba(57,198,214,.22),rgba(242,196,109,.18));
+      border-color:rgba(57,198,214,.34);color:#fff
+    }
+    .search-grid{
+      display:grid;grid-template-columns:repeat(4,1fr) auto;gap:14px
+    }
+    .field{
+      background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;padding:12px 14px
+    }
+    .field label{
+      display:block;color:var(--muted);font-size:.82rem;margin-bottom:6px;font-weight:700
+    }
+    .field select,.field input,.contact-form input,.contact-form textarea{
+      width:100%;background:transparent;border:none;outline:none;color:#fff;
+      font-family:inherit;font-size:1rem
+    }
+    .field select option{color:#08111f}
+    .stats{
+      padding:28px 0 0;
+    }
+    .stats-grid{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:18px
+    }
+    .stat{
+      background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
+      border-radius:24px;padding:24px;text-align:center
+    }
+    .stat h3{margin:0;font-size:2rem;color:#fff}
+    .stat p{margin:8px 0 0;color:var(--muted)}
+    .properties-head,.services-head,.testimonials-head,.contact-head,.calc-head{text-align:center;margin-bottom:26px}
+    .filter-bar{
+      display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:28px
+    }
+    .filter-btn{
+      background:rgba(255,255,255,.05);border:1px solid var(--stroke);
+      color:#dfebfa;border-radius:999px;padding:11px 18px;font-weight:800;cursor:pointer;transition:.25s
+    }
+    .filter-btn.active,.filter-btn:hover{
+      background:linear-gradient(135deg,rgba(57,198,214,.16),rgba(242,196,109,.12));
+      border-color:rgba(57,198,214,.28)
+    }
+    .property-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:20px
+    }
+    .property-card{
+      background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.08);border-radius:26px;overflow:hidden;
+      transition:.3s ease;box-shadow:0 18px 40px rgba(0,0,0,.22)
+    }
+    .property-card:hover{transform:translateY(-6px);box-shadow:0 24px 54px rgba(0,0,0,.3)}
+    .property-media{
+      height:240px;position:relative;overflow:hidden
+    }
+    .media-1{background:
+      linear-gradient(180deg,rgba(255,255,255,.05),transparent),
+      radial-gradient(circle at 20% 20%, rgba(242,196,109,.4), transparent 24%),
+      linear-gradient(160deg,#1e4775,#0a1630 58%,#091320)}
+    .media-2{background:
+      linear-gradient(180deg,rgba(255,255,255,.05),transparent),
+      radial-gradient(circle at 80% 18%, rgba(57,198,214,.36), transparent 22%),
+      linear-gradient(160deg,#214f7d,#0d1a33 58%,#08111f)}
+    .media-3{background:
+      linear-gradient(180deg,rgba(255,255,255,.05),transparent),
+      radial-gradient(circle at 35% 18%, rgba(242,196,109,.35), transparent 22%),
+      linear-gradient(160deg,#2b5d85,#10203b 56%,#0a1421)}
+    .media-4{background:
+      linear-gradient(180deg,rgba(255,255,255,.05),transparent),
+      radial-gradient(circle at 70% 20%, rgba(57,198,214,.35), transparent 24%),
+      linear-gradient(160deg,#24577a,#10203b 56%,#0a1421)}
+    .media-5{background:
+      linear-gradient(180deg,rgba(255,255,255,.05),transparent),
+      radial-gradient(circle at 20% 20%, rgba(242,196,109,.33), transparent 24%),
+      linear-gradient(160deg,#21486c,#0c1c32 56%,#091421)}
+    .media-6{background:
+      linear-gradient(180deg,rgba(255,255,255,.05),transparent),
+      radial-gradient(circle at 55% 15%, rgba(57,198,214,.34), transparent 22%),
+      linear-gradient(160deg,#25557d,#0f1f39 56%,#091320)}
+    .property-media:before{
+      content:"";position:absolute;left:24px;right:24px;bottom:22px;height:120px;border-radius:14px 14px 0 0;
+      background:
+        linear-gradient(90deg,
+          rgba(255,255,255,.08) 0 12%, transparent 12% 14%,
+          rgba(255,255,255,.11) 14% 23%, transparent 23% 26%,
+          rgba(255,255,255,.09) 26% 40%, transparent 40% 43%,
+          rgba(255,255,255,.1) 43% 56%, transparent 56% 59%,
+          rgba(255,255,255,.08) 59% 73%, transparent 73% 76%,
+          rgba(255,255,255,.12) 76% 92%, transparent 92% 100%);
+      box-shadow:0 -10px 30px rgba(57,198,214,.12);
+    }
+    .property-tags{
+      position:absolute;top:16px;right:16px;left:16px;display:flex;justify-content:space-between;gap:10px
+    }
+    .tag{
+      padding:9px 12px;border-radius:999px;font-size:.82rem;font-weight:800;
+      background:rgba(8,17,31,.62);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12)
+    }
+    .tag.price{color:#fce3a7}
+    .property-body{padding:20px}
+    .property-title{
+      display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:8px
+    }
+    .property-title h3{margin:0;font-size:1.2rem}
+    .property-title span{color:var(--muted);font-size:.92rem}
+    .property-desc{margin:0 0 16px;color:var(--muted);line-height:1.9;font-size:.95rem}
+    .property-meta{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px
+    }
+    .meta-box{
+      background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
+      border-radius:16px;padding:12px;text-align:center
+    }
+    .meta-box strong{display:block;font-size:1rem}
+    .meta-box small{color:var(--muted)}
+    .card-actions{display:flex;gap:10px}
+    .card-actions .btn{flex:1;padding:13px 14px}
+    .services-grid{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:18px
+    }
+    .service{
+      padding:24px;border-radius:24px;background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);transition:.28s
+    }
+    .service:hover{transform:translateY(-5px);background:rgba(255,255,255,.07)}
+    .service-icon{
+      width:56px;height:56px;border-radius:18px;display:flex;align-items:center;justify-content:center;
+      margin-bottom:16px;background:linear-gradient(135deg,rgba(57,198,214,.2),rgba(242,196,109,.16));
+      border:1px solid rgba(255,255,255,.1)
+    }
+    .service h3{margin:0 0 8px;font-size:1.1rem}
+    .service p{margin:0;color:var(--muted);line-height:1.85}
+    .calculator-wrap{
+      display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:stretch
+    }
+    .calc-card,.contact-card,.testimonial-slider,.steps-wrap{
+      background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
+      border-radius:28px;padding:24px;box-shadow:var(--shadow)
+    }
+    .calc-fields{
+      display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px
+    }
+    .calc-output{
+      display:grid;gap:14px;align-content:center;
+      background:
+        linear-gradient(135deg,rgba(57,198,214,.15),rgba(242,196,109,.09)),
+        rgba(255,255,255,.04)
+    }
+    .output-box{
+      padding:18px;border-radius:20px;background:rgba(8,17,31,.35);border:1px solid rgba(255,255,255,.08)
+    }
+    .output-box small{color:var(--muted);display:block;margin-bottom:6px}
+    .output-box strong{font-size:1.5rem}
+    .steps{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:18px
+    }
+    .step{
+      padding:22px;border-radius:22px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)
+    }
+    .step-number{
+      width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--gold),#ffe7b3);
+      color:#08111f;font-weight:900;display:flex;align-items:center;justify-content:center;margin-bottom:14px
+    }
+    .step h3{margin:0 0 8px}
+    .step p{margin:0;color:var(--muted);line-height:1.8}
+    .testimonials-layout{
+      display:grid;grid-template-columns:1fr 340px;gap:22px;align-items:stretch
+    }
+    .testimonial-slide{display:none}
+    .testimonial-slide.active{display:block;animation:fade .45s ease}
+    @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+    .quote{
+      font-size:1.18rem;line-height:2;color:#eef6ff;margin:0 0 22px
+    }
+    .person{
+      display:flex;align-items:center;gap:14px
+    }
+    .avatar{
+      width:58px;height:58px;border-radius:50%;
+      background:linear-gradient(135deg,rgba(57,198,214,.3),rgba(242,196,109,.25));
+      border:1px solid rgba(255,255,255,.12)
+    }
+    .person strong{display:block}
+    .person span{color:var(--muted);font-size:.92rem}
+    .slider-controls{
+      display:flex;gap:10px;margin-top:20px
+    }
+    .ctrl{
+      width:46px;height:46px;border-radius:14px;border:1px solid var(--stroke);
+      background:rgba(255,255,255,.05);color:#fff;cursor:pointer;font-size:1.1rem
+    }
+    .rating-card{
+      display:flex;flex-direction:column;justify-content:center;gap:18px
+    }
+    .big-rating{
+      font-size:3.6rem;font-weight:900;line-height:1;
+      background:linear-gradient(135deg,#fff,#92ebf4,#f7d690);
+      -webkit-background-clip:text;background-clip:text;color:transparent
+    }
+    .contact-layout{
+      display:grid;grid-template-columns:.95fr 1.05fr;gap:22px
+    }
+    .contact-list{
+      display:grid;gap:14px;margin-top:20px
+    }
+    .contact-item{
+      display:flex;gap:14px;align-items:flex-start;padding:16px;border-radius:18px;
+      background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)
+    }
+    .contact-item .icon{
+      width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg,rgba(57,198,214,.2),rgba(242,196,109,.16))
+    }
+    .contact-form{
+      display:grid;gap:14px
+    }
+    .contact-form .field{padding:14px 16px}
+    textarea{min-height:130px;resize:vertical}
+    .footer{
+      padding:28px 0 38px;color:#c3d3e8
+    }
+    .footer-wrap{
+      display:flex;justify-content:space-between;gap:16px;align-items:center;
+      padding-top:24px;border-top:1px solid rgba(255,255,255,.08)
+    }
+    .socials{display:flex;gap:10px}
+    .social{
+      width:42px;height:42px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+      background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)
+    }
+    .whatsapp{
+      position:fixed;left:18px;bottom:18px;z-index:80;
+      width:62px;height:62px;border:none;border-radius:20px;
+      background:linear-gradient(135deg,#25d366,#119c4d);color:#fff;cursor:pointer;
+      box-shadow:0 20px 40px rgba(37,211,102,.35);font-size:1.45rem
+    }
+    .reveal{opacity:0;transform:translateY(16px);transition:.6s ease}
+    .reveal.visible{opacity:1;transform:none}
+    .hidden-card{display:none !important}
+    .mobile-panel{
+      display:none;padding:0 0 18px
+    }
+    .mobile-panel .nav-links{
+      flex-direction:column;align-items:flex-start;padding:16px;border-radius:20px;
+      background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)
+    }
+    .modal{
+      position:fixed;inset:0;display:none;align-items:center;justify-content:center;
+      background:rgba(4,10,18,.68);backdrop-filter:blur(10px);z-index:120;padding:16px
+    }
+    .modal.open{display:flex}
+    .modal-card{
+      width:min(760px,100%);background:#0c1728;border:1px solid rgba(255,255,255,.09);
+      border-radius:30px;overflow:hidden;box-shadow:var(--shadow)
+    }
+    .modal-media{
+      height:260px;background:
+        linear-gradient(180deg,rgba(255,255,255,.08),transparent),
+        radial-gradient(circle at 25% 25%, rgba(242,196,109,.35), transparent 22%),
+        linear-gradient(160deg,#224f7a,#0c1831 58%,#08111f)
+    }
+    .modal-body{padding:24px}
+    .modal-top{
+      display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:10px
+    }
+    .modal-top h3{margin:0;font-size:1.5rem}
+    .modal-top .close{
+      width:46px;height:46px;border-radius:14px;border:1px solid var(--stroke);background:rgba(255,255,255,.05);color:#fff;cursor:pointer
+    }
+    .modal-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0
+    }
+    .modal-grid div{
+      padding:14px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)
+    }
+    .modal-grid small{display:block;color:var(--muted);margin-bottom:6px}
+    .results-note{
+      text-align:center;color:#b8cce6;margin-top:12px;min-height:24px;font-weight:700
+    }
+    @media (max-width:1100px){
+      .hero-grid,.calculator-wrap,.contact-layout,.testimonials-layout{grid-template-columns:1fr}
+      .property-grid{grid-template-columns:repeat(2,1fr)}
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+      .stats-grid{grid-template-columns:repeat(2,1fr)}
+      .search-grid{grid-template-columns:repeat(2,1fr)}
+      .steps{grid-template-columns:1fr}
+    }
+    @media (max-width:820px){
+      .nav-links.desktop,.nav-actions .btn{display:none}
+      .menu-btn,.mobile-panel{display:flex}
+      .mobile-panel{display:none}
+      .mobile-panel.open{display:block}
+      .hero{padding-top:40px}
+      .hero-visual{min-height:420px}
+      .property-grid,.services-grid,.stats-grid,.search-grid,.property-meta,.calc-fields,.modal-grid{grid-template-columns:1fr}
+      .card-actions,.hero-actions,.hero-points,.footer-wrap{flex-direction:column;align-items:stretch}
+      .property-title,.modal-top{flex-direction:column}
+      .section{padding:70px 0}
+      .showcase{border-radius:26px}
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="#home" class="brand">
+        <span class="brand-mark"></span>
+        <span>نايل هورايزون</span>
+      </a>
+
+      <nav class="nav-links desktop">
+        <a href="#home">الرئيسية</a>
+        <a href="#properties">العقارات</a>
+        <a href="#services">الخدمات</a>
+        <a href="#calculator">الحاسبة</a>
+        <a href="#contact">تواصل معنا</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="#contact">احجز استشارة</a>
+        <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+      </div>
+    </div>
+
+    <div class="container mobile-panel" id="mobilePanel">
+      <nav class="nav-links">
+        <a href="#home">الرئيسية</a>
+        <a href="#properties">العقارات</a>
+        <a href="#services">الخدمات</a>
+        <a href="#calculator">الحاسبة</a>
+        <a href="#contact">تواصل معنا</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content reveal visible">
+          <span class="badge"><span class="badge-dot"></span> وجهتك الراقية للعقارات على ضفاف المستقبل</span>
+          <h1>اكتشف قيمة السكن والاستثمار مع <span class="gradient">نايل هورايزون</span></h1>
+          <p>
+            نقدم تجربة عقارية متكاملة تجمع بين المواقع المميزة، التصميم العصري، وفرص الاستثمار الذكية.
+            سواء كنت تبحث عن شقة فاخرة، فيلا مميزة، أو وحدة استثمارية بعائد قوي، نحن هنا لنقودك للقرار الأفضل.
+          </p>
+          <div class="hero-actions">
+            <a href="#properties" class="btn btn-primary">استعرض العقارات</a>
+            <a href="#calculator" class="btn btn-secondary">احسب القسط الآن</a>
+          </div>
+          <div class="hero-points">
+            <span><i>✓</i> مشاريع مختارة بعناية</span>
+            <span><i>✓</i> استشارات استثمارية موثوقة</span>
+            <span><i>✓</i> دعم كامل حتى التعاقد</span>
+          </div>
+
+          <div class="search-panel">
+            <div class="search-tabs" id="searchTabs">
+              <button class="tab active" data-mode="all">الكل</button>
+              <button class="tab" data-mode="sale">للبيع</button>
+              <button class="tab" data-mode="rent">للإيجار</button>
+              <button class="tab" data-mode="investment">استثمار</button>
+            </div>
+            <div class="search-grid">
+              <div class="field">
+                <label>المدينة</label>
+                <select id="citySelect">
+                  <option value="all">كل المدن</option>
+                  <option value="القاهرة الجديدة">القاهرة الجديدة</option>
+                  <option value="الشيخ زايد">الشيخ زايد</option>
+                  <option value="العاصمة الإدارية">العاصمة الإدارية</option>
+                  <option value="الساحل الشمالي">الساحل الشمالي</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>نوع العقار</label>
+                <select id="typeSelect">
+                  <option value="all">كل الأنواع</option>
+                  <option value="شقة">شقة</option>
+                  <option value="فيلا">فيلا</option>
+                  <option value="بنتهاوس">بنتهاوس</option>
+                  <option value="مكتب">مكتب</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>الميزانية القصوى</label>
+                <select id="budgetSelect">
+                  <option value="999999999">بدون حد</option>
+                  <option value="4000000">حتى ٤ مليون</option>
+                  <option value="8000000">حتى ٨ مليون</option>
+                  <option value="15000000">حتى ١٥ مليون</option>
+                  <option value="30000000">حتى ٣٠ مليون</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>المساحة</label>
+                <select id="sizeSelect">
+                  <option value="0">أي مساحة</option>
+                  <option value="120">120 م² +</option>
+                  <option value="180">180 م² +</option>
+                  <option value="250">250 م² +</option>
+                </select>
+              </div>
+              <button class="btn btn-primary" id="searchBtn">بحث ذكي</button>
+            </div>
+            <div class="results-note" id="resultsNote"></div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="showcase">
+            <div class="float-card float-top">
+              <small>أعلى تقييم للخدمة</small>
+              <strong>4.9 / 5</strong>
+              <div class="mini-stars">★★★★★</div>
+            </div>
+            <div class="skyline"></div>
+            <div class="water"></div>
+            <div class="float-card float-bottom">
+              <small>فرص حصرية هذا الشهر</small>
+              <strong>12 عقار مميز</strong>
+              <div style="color:var(--muted);margin-top:6px">بدءًا من 3.8 مليون جنيه</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container stats">
+        <div class="stats-grid">
+          <div class="stat reveal">
+            <h3 class="counter" data-target="250">0</h3>
+            <p>وحدة عقارية متاحة</p>
+          </div>
+          <div class="stat reveal">
+            <h3 class="counter" data-target="98">0</h3>
+            <p>عميل راضٍ عن الخدمة</p>
+          </div>
+          <div class="stat reveal">
+            <h3 class="counter" data-target="15">0</h3>
+            <p>سنوات من الخبرة</p>
+          </div>
+          <div class="stat reveal">
+            <h3 class="counter" data-target="32">0</h3>
+            <p>مشروع استثماري مختار</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="properties">
+      <div class="container">
+        <div class="properties-head reveal">
+          <span class="badge"><span class="badge-dot"></span> عقارات مختارة</span>
+          <h2 class="section-title">عقارات استثنائية تناسب أسلوب حياتك</h2>
+          <p class="section-subtitle">تصفح مجموعة منتقاة من الوحدات السكنية والاستثمارية بعناية، مع تفاصيل واضحة وخيارات تلائم أهدافك.</p>
+        </div>
+
+        <div class="filter-bar reveal">
+          <button class="filter-btn active" data-filter="all">الكل</button>
+          <button class="filter-btn" data-filter="sale">للبيع</button>
+          <button class="filter-btn" data-filter="rent">للإيجار</button>
+          <button class="filter-btn" data-filter="investment">استثمار</button>
+        </div>
+
+        <div class="property-grid" id="propertyGrid">
+          <article class="property-card reveal" data-mode="sale" data-city="القاهرة الجديدة" data-type="شقة" data-price="5200000" data-size="165" data-title="شقة فاخرة بإطلالة مفتوحة" data-location="القاهرة الجديدة" data-desc="تشطيب فاخر، تصميم داخلي عصري، وقرب من أهم المحاور والخدمات الراقية." data-bed="3" data-bath="2" data-area="165 م²">
+            <div class="property-media media-1">
+              <div class="property-tags">
+                <span class="tag">القاهرة الجديدة</span>
+                <span class="tag price">5.2 مليون</span>
+              </div>
+            </div>
+            <div class="property-body">
+              <div class="property-title">
+                <div>
+                  <h3>شقة فاخرة بإطلالة مفتوحة</h3>
+                  <span>داخل كمبوند متكامل الخدمات</span>
+                </div>
+              </div>
+              <p class="property-desc">وحدة مثالية للعائلة مع مساحات ذكية وموقع راقٍ بالقرب من المدارس والمراكز التجارية.</p>
+              <div class="property-meta">
+                <div class="meta-box"><strong>3</strong><small>غرف</small></div>
+                <div class="meta-box"><strong>2</strong><small>حمام</small></div>
+                <div class="meta-box"><strong>165م²</strong><small>المساحة</small></div>
+              </div>
+              <div class="card-actions">
+                <button class="btn btn-primary details-btn">عرض التفاصيل</button>
+                <a href="#contact" class="btn btn-secondary">احجز زيارة</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="property-card reveal" data-mode="investment" data-city="العاصمة الإدارية" data-type="مكتب" data-price="3800000" data-size="92" data-title="مكتب إداري بعائد استثماري" data-location="العاصمة الإدارية" data-desc="موقع مميز داخل منطقة الأعمال مع فرص نمو قوية وعائد إيجاري مرتفع." data-bed="—" data-bath="1" data-area="92 م²">
+            <div class="property-media media-2">
+              <div class="property-tags">
+                <span class="tag">العاصمة الإدارية</span>
+                <span class="tag price">3.8 مليون</span>
+              </div>
+            </div>
+            <div class="property-body">
+              <div class="property-title">
+                <div>
+                  <h3>مكتب إداري بعائد استثماري</h3>
+                  <span>فرصة ذكية للمستثمرين</span>
+                </div>
+              </div>
+              <p class="property-desc">مكتب جاهز للأعمال في موقع حيوي يضمن سهولة الوصول وجاذبية عالية للشركات.</p>
+              <div class="property-meta">
+                <div class="meta-box"><strong>جاهز</strong><small>التشغيل</small></div>
+                <div class="meta-box"><strong>8%</strong><small>عائد متوقع</small></div>
+                <div class="meta-box"><strong>92م²</strong><small>المساحة</small></div>
+              </div>
+              <div class="card-actions">
+                <button class="btn btn-primary details-btn">عرض التفاصيل</button>
+                <a href="#contact" class="btn btn-secondary">استشارة استثمار</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="property-card reveal" data-mode="sale" data-city="الشيخ زايد" data-type="فيلا" data-price="18500000" data-size="320" data-title="فيلا مستقلة بحديقة خاصة" data-location="الشيخ زايد" data-desc="خصوصية تامة، مساحات رحبة، وتشطيبات راقية في مجتمع سكني فاخر." data-bed="5" data-bath="4" data-area="320 م²">
+            <div class="property-media media-3">
+              <div class="property-tags">
+                <span class="tag">الشيخ زايد</span>
+                <span class="tag price">18.5 مليون</span>
+              </div>
+            </div>
+            <div class="property-body">
+              <div class="property-title">
+                <div>
+                  <h3>فيلا مستقلة بحديقة خاصة</h3>
+                  <span>سكن فاخر لعشاق الهدوء</span>
+                </div>
+              </div>
+              <p class="property-desc">فيلا مصممة للحياة العصرية مع حديقة واسعة ومناطق معيشة مضيئة وإطلالات مميزة.</p>
+              <div class="property-meta">
+                <div class="meta-box"><strong>5</strong><small>غرف</small></div>
+                <div class="meta-box"><strong>4</strong><small>حمام</small></div>
+                <div class="meta-box"><strong>320م²</strong><small>المساحة</small></div>
+              </div>
+              <div class="card-actions">
+                <button class="btn btn-primary details-btn">عرض التفاصيل</button>
+                <a href="#contact" class="btn btn-secondary">احجز زيارة</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="property-card reveal" data-mode="rent" data-city="القاهرة الجديدة" data-type="بنتهاوس" data-price="95000" data-size="210" data-title="بنتهاوس للإيجار بإطلالة بانورامية" data-location="القاهرة الجديدة" data-desc="وحدة راقية مفروشة بالكامل مع تراس واسع وخدمات فندقية داخل الكمبوند." data-bed="4" data-bath="3" data-area="210 م²">
+            <div class="property-media media-4">
+              <div class="property-tags">
+                <span class="tag">القاهرة الجديدة</span>
+                <span class="tag price">95 ألف / شهر</span>
+              </div>
+            </div>
+            <div class="property-body">
+              <div class="property-title">
+                <div>
+                  <h3>بنتهاوس للإيجار بإطلالة بانورامية</h3>
+                  <span>مفروش وجاهز للسكن</span>
+                </div>
+              </div>
+              <p class="property-desc">اختيار مثالي لأسلوب حياة فاخر مع خصوصية عالية ومرافق متكاملة وأمن دائم.</p>
+              <div class="property-meta">
+                <div class="meta-box"><strong>4</strong><small>غرف</small></div>
+                <div class="meta-box"><strong>3</strong><small>حمام</small></div>
+                <div class="meta-box"><strong>210م²</strong><small>المساحة</small></div>
+              </div>
+              <div class="card-actions">
+                <button class="btn btn-primary details-btn">عرض التفاصيل</button>
+                <a href="#contact" class="btn btn-secondary">اطلب المعاينة</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="property-card reveal" data-mode="investment" data-city="الساحل الشمالي" data-type="شقة" data-price="6900000" data-size="130" data-title="شاليه استثماري على البحر" data-location="الساحل الشمالي" data-desc="إقبال موسمي قوي، إدارة تأجير احترافية، وفرصة عائد ممتاز طوال الصيف." data-bed="2" data-bath="2" data-area="130 م²">
+            <div class="property-media media-5">
+              <div class="property-tags">
+                <span class="tag">الساحل الشمالي</span>
+                <span class="tag price">6.9 مليون</span>
+              </div>
+            </div>
+            <div class="property-body">
+              <div class="property-title">
+                <div>
+                  <h3>شاليه استثماري على البحر</h3>
+                  <span>يجمع بين المتعة والعائد</span>
+                </div>
+              </div>
+              <p class="property-desc">وحدة صيفية بإطلالة جذابة في مشروع متكامل مع قابلية عالية للتأجير الموسمي.</p>
+              <div class="property-meta">
+                <div class="meta-box"><strong>2</strong><small>غرف</small></div>
+                <div class="meta-box"><strong>2</strong><small>حمام</small></div>
+                <div class="meta-box"><strong>130م²</strong><small>المساحة</small></div>
+              </div>
+              <div class="card-actions">
+                <button class="btn btn-primary details-btn">عرض التفاصيل</button>
+                <a href="#contact" class="btn btn-secondary">استثمار الآن</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="property-card reveal" data-mode="sale" data-city="العاصمة الإدارية" data-type="شقة" data-price="8200000" data-size="190" data-title="شقة سكنية مميزة في قلب العاصمة" data-location="العاصمة الإدارية" data-desc="موقع استراتيجي، واجهات حديثة، ومساحة مناسبة للعائلة مع خطط سداد مرنة." data-bed="3" data-bath="3" data-area="190 م²">
+            <div class="property-media media-6">
+              <div class="property-tags">
+                <span class="tag">العاصمة الإدارية</span>
+                <span class="tag price">8.2 مليون</span>
+              </div>
+            </div>
+            <div class="property-body">
+              <div class="property-title">
+                <div>
+                  <h3>شقة سكنية مميزة في قلب العاصمة</h3>
+                  <span>سكن ومستقبل في عنوان واحد</span>
+                </div>
+              </div>
+              <p class="property-desc">تصميم عملي وإطلالة مشرقة مع قرب من الخدمات الأساسية والطرق الرئيسية.</p>
+              <div class="property-meta">
+                <div class="meta-box"><strong>3</strong><small>غرف</small></div>
+                <div class="meta-box"><strong>3</strong><small>حمام</small></div>
+                <div class="meta-box"><strong>190م²</strong><small>المساحة</small></div>
+              </div>
+              <div class="card-actions">
+                <button class="btn btn-primary details-btn">عرض التفاصيل</button>
+                <a href="#contact" class="btn btn-secondary">احجز وحدتك</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="services-head reveal">
+          <span class="badge"><span class="badge-dot"></span> خدمات متكاملة</span>
+          <h2 class="section-title">كل ما تحتاجه في رحلة عقارية واحدة</h2>
+          <p class="section-subtitle">من البحث والمقارنة إلى التفاوض والتعاقد، نمنحك تجربة احترافية سلسة وواضحة.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service reveal">
+            <div class="service-icon">🏙️</div>
+            <h3>تسويق احترافي</h3>
+            <p>عرض العقارات بأسلوب عصري يجذب العملاء المستهدفين ويبرز نقاط القوة الحقيقية لكل وحدة.</p>
+          </div>
+          <div class="service reveal">
+            <div class="service-icon">📈</div>
+            <h3>استشارات استثمارية</h3>
+            <p>تحليل فرص الشراء والعائد المتوقع لمساعدتك في اتخاذ قرار مدروس ومربح.</p>
+          </div>
+          <div class="service reveal">
+            <div class="service-icon">🤝</div>
+            <h3>تفاوض وإتمام التعاقد</h3>
+            <p>ندير التفاوض باحترافية لضمان أفضل قيمة لك مع متابعة دقيقة حتى توقيع العقود.</p>
+          </div>
+          <div class="service reveal">
+            <div class="service-icon">🔑</div>
+            <h3>إدارة ما بعد البيع</h3>
+            <p>دعم مستمر يشمل المتابعة، الاستلام، والتجهيز للتشغيل أو التأجير عند الحاجة.</p>
+          </div>
+        </div>
+
+        <div class="steps-wrap reveal" style="margin-top:28px">
+          <div class="steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <h3>فهم احتياجك</h3>
+              <p>نحدد هدفك بدقة: سكن، استثمار، أو تأجير، مع فهم الميزانية والموقع المناسب.</p>
+            </div>
+            <div class="step">
+              <div class="step-number">2</div>
+              <h3>ترشيحات ذكية</h3>
+              <p>نقترح أفضل الخيارات المطابقة لمعاييرك مع شرح مزايا كل عقار بشكل واضح.</p>
+            </div>
+            <div class="step">
+              <div class="step-number">3</div>
+              <h3>إنهاء الصفقة بثقة</h3>
+              <p>نرافقك في الزيارة والتفاوض والتعاقد حتى استلام الوحدة وتحقيق أفضل قرار.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="calculator">
+      <div class="container">
+        <div class="calc-head reveal">
+          <span class="badge"><span class="badge-dot"></span> حاسبة التمويل</span>
+          <h2 class="section-title">احسب القسط الشهري بسهولة</h2>
+          <p class="section-subtitle">أدخل قيمة العقار ونسبة المقدم وفترة السداد لتحصل على تقدير سريع ومفيد.</p>
+        </div>
+
+        <div class="calculator-wrap">
+          <div class="calc-card reveal">
+            <h3 style="margin:0 0 8px;font-size:1.3rem">بيانات التمويل</h3>
+            <p style="margin:0;color:var(--muted)">القيم التالية تقديرية وتمنحك تصورًا أوليًا قبل التواصل مع فريقنا.</p>
+
+            <div class="calc-fields">
+              <div class="field">
+                <label>سعر العقار (جنيه)</label>
+                <input type="number" id="propertyPrice" value="5200000" min="1">
+              </div>
+              <div class="field">
+                <label>المقدم (%)</label>
+                <input type="number" id="downPayment" value="20" min="0" max="100">
+              </div>
+              <div class="field">
+                <label>عدد السنوات</label>
+                <input type="number" id="loanYears" value="8" min="1" max="30">
+              </div>
+              <div class="field">
+                <label>الفائدة السنوية (%)</label>
+                <input type="number" id="interestRate" value="11" min="0" step="0.1">
+              </div>
+            </div>
+            <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+              <button class="btn btn-primary" id="calcBtn">احسب الآن</button>
+              <a href="#contact" class="btn btn-secondary">اطلب خطة سداد</a>
+            </div>
+          </div>
+
+          <div class="calc-card calc-output reveal">
+            <div class="output-box">
+              <small>قيمة المقدم</small>
+              <strong id="downValue">1,040,000 ج.م</strong>
+            </div>
+            <div class="output-box">
+              <small>قيمة التمويل</small>
+              <strong id="loanValue">4,160,000 ج.م</strong>
+            </div>
+            <div class="output-box">
+              <small>القسط الشهري التقريبي</small>
+              <strong id="monthlyValue">57,219 ج.م</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="testimonials-head reveal">
+          <span class="badge"><span class="badge-dot"></span> آراء العملاء</span>
+          <h2 class="section-title">ثقة مبنية على نتائج حقيقية</h2>
+          <p class="section-subtitle">نفخر بتجارب عملائنا الذين وجدوا مع نايل هورايزون أكثر من مجرد عقار.</p>
+        </div>
+
+        <div class="testimonials-layout">
+          <div class="testimonial-slider reveal">
+            <div class="testimonial-slide active">
+              <p class="quote">“تجربتي مع نايل هورايزون كانت ممتازة من أول استشارة حتى توقيع العقد. حصلت على وحدة مناسبة جدًا لميزانيتي وفي موقع أفضل مما توقعت.”</p>
+              <div class="person">
+                <div class="avatar"></div>
+                <div>
+                  <strong>أحمد سامح</strong>
+                  <span>مشتري وحدة سكنية - القاهرة الجديدة</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-slide">
+              <p class="quote">“أكثر ما أعجبني هو الشفافية وسرعة المتابعة. الفريق قدم لي فرصًا استثمارية مدروسة وساعدني في اختيار وحدة بعائد ممتاز.”</p>
+              <div class="person">
+                <div class="avatar"></div>
+                <div>
+                  <strong>سارة نبيل</strong>
+                  <span>مستثمرة - العاصمة الإدارية</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-slide">
+              <p class="quote">“خدمة راقية جدًا وتنظيم احترافي للمعاينات. أوصي بهم لأي شخص يبحث عن مستوى مختلف من الخدمة العقارية.”</p>
+              <div class="person">
+                <div class="avatar"></div>
+                <div>
+                  <strong>محمود ياسر</strong>
+                  <span>مستأجر بنتهاوس - القاهرة الجديدة</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="slider-controls">
+              <button class="ctrl" id="prevTestimonial">→</button>
+              <button class="ctrl" id="nextTestimonial">←</button>
+            </div>
+          </div>
+
+          <div class="contact-card rating-card reveal">
+            <div>
+              <div class="big-rating">4.9</div>
+              <div class="mini-stars" style="font-size:1.2rem">★★★★★</div>
+            </div>
+            <p style="margin:0;color:var(--muted);line-height:1.9">متوسط تقييم العملاء على جودة الخدمة، سرعة الاستجابة، ودقة الترشيحات العقارية.</p>
+            <div class="output-box">
+              <small>نسبة الإحالات من العملاء السابقين</small>
+              <strong>72%</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-head reveal">
+          <span class="badge"><span class="badge-dot"></span> تواصل معنا</span>
+          <h2 class="section-title">ابدأ رحلتك العقارية مع نايل هورايزون</h2>
+          <p class="section-subtitle">أرسل لنا تفاصيل احتياجك وسيتواصل معك أحد مستشارينا خلال وقت قصير.</p>
+        </div>
+
+        <div class="contact-layout">
+          <div class="contact-card reveal">
+            <h3 style="margin:0 0 8px;font-size:1.3rem">معلومات التواصل</h3>
+            <p style="margin:0;color:var(--muted);line-height:1.9">فريقنا جاهز لخدمتك طوال الأسبوع لتقديم أفضل العروض والحلول العقارية.</p>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <div class="icon">📍</div>
+                <div>
+                  <strong>العنوان</strong>
+                  <div style="color:var(--muted)">التجمع الخامس، القاهرة الجديدة</div>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="icon">📞</div>
+                <div>
+                  <strong>الهاتف</strong>
+                  <div style="color:var(--muted)">+20 100 000 0000</div>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="icon">✉️</div>
+                <div>
+                  <strong>البريد الإلكتروني</strong>
+                  <div style="color:var(--muted)">info@nilehorizon.com</div>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="icon">⏰</div>
+                <div>
+                  <strong>مواعيد العمل</strong>
+                  <div style="color:var(--muted)">يوميًا من 10 صباحًا حتى 8 مساءً</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-card reveal">
+            <form class="contact-form" id="contactForm">
+              <div class="field">
+                <label>الاسم الكامل</label>
+                <input type="text" placeholder="اكتب اسمك" required>
+              </div>
+              <div class="field">
+                <label>رقم الهاتف</label>
+                <input type="tel" placeholder="اكتب رقم الهاتف" required>
+              </div>
+              <div class="field">
+                <label>نوع الطلب</label>
+                <select required>
+                  <option value="">اختر نوع الطلب</option>
+                  <option>شراء عقار</option>
+                  <option>إيجار عقار</option>
+                  <option>استشارة استثمارية</option>
+                  <option>تقييم عقاري</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>تفاصيل إضافية</label>
+                <textarea placeholder="اذكر المدينة، الميزانية، ونوع العقار المطلوب"></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit">إرسال الطلب</button>
+              <div id="formMessage" style="color:#bdf8dd;font-weight:800;min-height:24px"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <div>
+        <strong>نايل هورايزون</strong>
+        <div style="color:var(--muted)">عقارات ترتقي بطموحك وتطل على مستقبل أفضل.</div>
+      </div>
+      <div class="socials">
+        <a class="social" href="#" aria-label="Instagram">⌁</a>
+        <a class="social" href="#" aria-label="Facebook">f</a>
+        <a class="social" href="#" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="whatsapp" title="تواصل سريع">✆</button>
+
+  <div class="modal" id="propertyModal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-media"></div>
+      <div class="modal-body">
+        <div class="modal-top">
+          <div>
+            <h3 id="modalTitle">تفاصيل العقار</h3>
+            <div id="modalLocation" style="color:var(--muted);margin-top:6px"></div>
+          </div>
+          <button class="close" id="closeModal">✕</button>
+        </div>
+        <p id="modalDesc" style="color:var(--muted);line-height:1.95;margin:0"></p>
+        <div class="modal-grid">
+          <div><small>السعر</small><strong id="modalPrice">—</strong></div>
+          <div><small>نوع العقار</small><strong id="modalType">—</strong></div>
+          <div><small>حالة العرض</small><strong id="modalMode">—</strong></div>
+          <div><small>الغرف</small><strong id="modalBed">—</strong></div>
+          <div><small>الحمامات</small><strong id="modalBath">—</strong></div>
+          <div><small>المساحة</small><strong id="modalArea">—</strong></div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a href="#contact" class="btn btn-primary" id="modalContact">اطلب هذا العقار</a>
+          <button class="btn btn-secondary" id="modalClose2">إغلاق</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobilePanel = document.getElementById('mobilePanel');
+    menuBtn.addEventListener('click', () => mobilePanel.classList.toggle('open'));
+    document.querySelectorAll('.mobile-panel a').forEach(a => {
+      a.addEventListener('click', () => mobilePanel.classList.remove('open'));
+    });
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    },{threshold:.15});
+    revealEls.forEach(el=>revealObserver.observe(el));
+
+    const counters = document.querySelectorAll('.counter');
+    const counterObserver = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting && !entry.target.dataset.done){
+          entry.target.dataset.done = "true";
+          const target = +entry.target.dataset.target;
+          let n = 0;
+          const step = Math.max(1, Math.ceil(target / 50));
+          const tick = () => {
+            n += step;
+            if(n >= target) n = target;
+            entry.target.textContent = n.toLocaleString('ar-EG') + (target === 98 ? '%' : '+');
+            if(n < target) requestAnimationFrame(tick);
+          };
+          tick();
+        }
+      });
+    },{threshold:.5});
+    counters.forEach(c=>counterObserver.observe(c));
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const tabs = document.querySelectorAll('.tab');
+    const cards = [...document.querySelectorAll('.property-card')];
+    const resultsNote = document.getElementById('resultsNote');
+    let currentMode = 'all';
+
+    function formatPrice(value, mode) {
+      if (mode === 'rent') return Number(value).toLocaleString('ar-EG') + ' ج.م / شهر';
+      return Number(value).toLocaleString('ar-EG') + ' ج.م';
+    }
+
+    function filterCards(mode='all', city='all', type='all', budget=Infinity, minSize=0){
+      let visible = 0;
+      cards.forEach(card=>{
+        const matchMode = mode === 'all' || card.dataset.mode === mode;
+        const matchCity = city === 'all' || card.dataset.city === city;
+        const matchType = type === 'all' || card.dataset.type === type;
+        const matchBudget = +card.dataset.price <= +budget;
+        const matchSize = +card.dataset.size >= +minSize;
+        const show = matchMode && matchCity && matchType && matchBudget && matchSize;
+        card.classList.toggle('hidden-card', !show);
+        if(show) visible++;
+      });
+      resultsNote.textContent = visible ? `تم العثور على ${visible.toLocaleString('ar-EG')} عقار مطابق` : 'لا توجد نتائج مطابقة حاليًا، جرّب تعديل معايير البحث';
+    }
+
+    filterButtons.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        filterButtons.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        currentMode = btn.dataset.filter;
+        tabs.forEach(t=>t.classList.toggle('active', t.dataset.mode === currentMode));
+        filterCards(currentMode);
+      });
+    });
+
+    tabs.forEach(tab=>{
+      tab.addEventListener('click', ()=>{
+        tabs.forEach(t=>t.classList.remove('active'));
+        tab.classList.add('active');
+        currentMode = tab.dataset.mode;
+      });
+    });
+
+    document.getElementById('searchBtn').addEventListener('click', ()=>{
+      const city = document.getElementById('citySelect').value;
+      const type = document.getElementById('typeSelect').value;
+      const budget = document.getElementById('budgetSelect').value;
+      const size = document.getElementById('sizeSelect').value;
+      filterButtons.forEach(b=>b.classList.toggle('active', b.dataset.filter === currentMode));
+      filterCards(currentMode, city, type, budget, size);
+      document.getElementById('properties').scrollIntoView({behavior:'smooth'});
+    });
+
+    function calcMortgage() {
+      const price = parseFloat(document.getElementById('propertyPrice').value) || 0;
+      const downPercent = parseFloat(document.getElementById('downPayment').value) || 0;
+      const years = parseFloat(document.getElementById('loanYears').value) || 0;
+      const annualRate = parseFloat(document.getElementById('interestRate').value) || 0;
+
+      const downValue = price * (downPercent / 100);
+      const loan = price - downValue;
+      const monthlyRate = annualRate / 100 / 12;
+      const months = years * 12;
+
+      let monthly = 0;
+      if (monthlyRate === 0) {
+        monthly = months ? loan / months : 0;
+      } else {
+        monthly = loan * (monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
+      }
+
+      document.getElementById('downValue').textContent = Math.round(downValue).toLocaleString('ar-EG') + ' ج.م';
+      document.getElementById('loanValue').textContent = Math.round(loan).toLocaleString('ar-EG') + ' ج.م';
+      document.getElementById('monthlyValue').textContent = Math.round(monthly).toLocaleString('ar-EG') + ' ج.م';
+    }
+    document.getElementById('calcBtn').addEventListener('click', calcMortgage);
+    ['propertyPrice','downPayment','loanYears','interestRate'].forEach(id=>{
+      document.getElementById(id).addEventListener('input', calcMortgage);
+    });
+    calcMortgage();
+
+    const slides = document.querySelectorAll('.testimonial-slide');
+    let slideIndex = 0;
+    function showSlide(i){
+      slides.forEach((s,idx)=>s.classList.toggle('active', idx === i));
+    }
+    document.getElementById('nextTestimonial').addEventListener('click', ()=>{
+      slideIndex = (slideIndex + 1) % slides.length;
+      showSlide(slideIndex);
+    });
+    document.getElementById('prevTestimonial').addEventListener('click', ()=>{
+      slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+      showSlide(slideIndex);
+    });
+    setInterval(()=>{
+      slideIndex = (slideIndex + 1) % slides.length;
+      showSlide(slideIndex);
+    }, 5000);
+
+    const modal = document.getElementById('propertyModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalLocation = document.getElementById('modalLocation');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalPrice = document.getElementById('modalPrice');
+    const modalType = document.getElementById('modalType');
+    const modalMode = document.getElementById('modalMode');
+    const modalBed = document.getElementById('modalBed');
+    const modalBath = document.getElementById('modalBath');
+    const modalArea = document.getElementById('modalArea');
+
+    const modeMap = {
+      sale:'للبيع',
+      rent:'للإيجار',
+      investment:'استثمار'
+    };
+
+    document.querySelectorAll('.details-btn').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const card = btn.closest('.property-card');
+        modalTitle.textContent = card.dataset.title;
+        modalLocation.textContent = card.dataset.location;
+        modalDesc.textContent = card.dataset.desc;
+        modalPrice.textContent = formatPrice(card.dataset.price, card.dataset.mode);
+        modalType.textContent = card.dataset.type;
+        modalMode.textContent = modeMap[card.dataset.mode] || '—';
+        modalBed.textContent = card.dataset.bed;
+        modalBath.textContent = card.dataset.bath;
+        modalArea.textContent = card.dataset.area;
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden','false');
+      });
+    });
+
+    function closeModal(){
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden','true');
+    }
+    document.getElementById('closeModal').addEventListener('click', closeModal);
+    document.getElementById('modalClose2').addEventListener('click', closeModal);
+    modal.addEventListener('click', e=>{
+      if(e.target === modal) closeModal();
+    });
+    window.addEventListener('keydown', e=>{
+      if(e.key === 'Escape') closeModal();
+    });
+
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+    contactForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      formMessage.textContent = 'تم إرسال طلبك بنجاح، سنتواصل معك قريبًا.';
+      contactForm.reset();
+      setTimeout(()=> formMessage.textContent = '', 4000);
+    });
+
+    resultsNote.textContent = 'استعرض أحدث العقارات المتاحة الآن';
+  </script>
+</body>
+</html>
